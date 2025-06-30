@@ -100,11 +100,7 @@
                 :src="useAssetUrl(img)"
                 alt="Gallery Image"
                 class="rounded-xl shadow-lg object-cover h-64 w-full border border-gray-700/30 transition duration-300 hover:scale-[1.02]"
-                format="webp"
                 loading="lazy"
-                placeholder
-                width="600"
-                height="400"
               />
               <!-- 👈 Mobile swipe hint (only on 1st image) -->
               <div
@@ -200,6 +196,7 @@ import { ref, computed, onMounted } from "vue"
 import { marked } from "marked"
 import { useApi } from "@/composables/useApi"
 import { useDeviceId } from "@/composables/useDeviceId"
+import { useMeta } from "@/utils/meta"
 
 import { Swiper, SwiperSlide } from "swiper/vue"
 import "swiper/css"
@@ -229,6 +226,12 @@ onMounted(async () => {
   try {
     const res = await useApi(`api/projects/${slug}`)
     project.value = res
+    console.log(project.value)
+    useMeta({
+      title: project.value?.title ?? "Project",
+      description: project.value?.description ?? "Project details and preview",
+      image: project.value?.coverImage,
+    })
 
     const { getDeviceId } = useDeviceId()
     const deviceId = getDeviceId()

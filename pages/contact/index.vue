@@ -87,7 +87,10 @@
 
 <script setup>
 import { reactive } from "vue"
-
+useMeta({
+  title: "Contact Jekk",
+  description: "Welcome to my portfolio website!",
+})
 // Replace with your WhatsApp number (in international format, no "+" or spaces)
 const whatsappNumber = "62895625047784"
 

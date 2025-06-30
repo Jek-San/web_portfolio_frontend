@@ -26,3 +26,10 @@
     </div>
   </section>
 </template>
+
+<script setup>
+useMeta({
+  title: "Home",
+  description: "Welcome to my portfolio website!",
+})
+</script>

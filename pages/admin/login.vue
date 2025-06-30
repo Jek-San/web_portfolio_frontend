@@ -37,6 +37,11 @@
 definePageMeta({
   middleware: "guest-only",
 })
+useMeta({
+  title: "Login",
+  description: "Admin login page",
+  indexable: false, // Prevent search engines from indexing admin
+})
 import { useRouter } from "vue-router"
 const router = useRouter()
 

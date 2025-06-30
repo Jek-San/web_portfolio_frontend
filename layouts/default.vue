@@ -19,6 +19,14 @@
 <script setup>
 import Navbar from "@/components/Navbar.vue"
 const { flash } = useFlash()
+useHead({
+  meta: [
+    { charset: "utf-8" },
+    { name: "viewport", content: "width=device-width, initial-scale=1" },
+    { name: "theme-color", content: "#0d1117" },
+  ],
+  link: [{ rel: "icon", href: "/fvg.svg", type: "image/png/x-icon/svg" }],
+})
 </script>
 
 <style scoped>

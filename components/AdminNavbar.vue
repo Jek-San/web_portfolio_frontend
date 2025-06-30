@@ -3,7 +3,11 @@
   <nav
     class="w-full px-6 py-4 flex justify-between items-center text-white bg-[#0d1117] flex-shrink-0"
   >
-    <h1 class="text-2xl font-bold text-cyan-400">Jekk's Portfolio</h1>
+    <h1 class="text-2xl font-bold text-cyan-400">
+      <router-link to="/admin/dashboard" class="hover:text-cyan-300"
+        >Jekk's Portfolio</router-link
+      >
+    </h1>
     <ul class="flex gap-6 font-medium">
       <li>
         <router-link to="/admin/projects" class="hover:text-cyan-300"

@@ -113,7 +113,11 @@ import { ref, onMounted } from "vue"
 import { useApi } from "@/composables/useApi"
 import { useFlash } from "@/composables/useFlash"
 import DeleteModal from "@/components/DeleteModal.vue"
-
+useMeta({
+  title: `Projects List`,
+  description: "Admin Projects List",
+  indexable: false, // Prevent search engines from indexing admin
+})
 const projects = ref([])
 const isLoading = ref(false)
 const showModal = ref(false)

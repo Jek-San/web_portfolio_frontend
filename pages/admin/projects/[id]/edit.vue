@@ -194,7 +194,11 @@ const galleryPreview = ref([])
 const existingImages = ref([]) // ← from backend
 const newGalleryFiles = ref([])
 const newGalleryPreview = ref([])
-
+useMeta({
+  title: `Edit ${params.id}`,
+  description: "Admin login page",
+  indexable: false, // Prevent search engines from indexing admin
+})
 const form = ref({
   title: "",
   description: "",

@@ -175,7 +175,11 @@ import { useRouter } from "vue-router"
 import { useFlash } from "@/composables/useFlash"
 import { useApi } from "@/composables/useApi"
 import { useSlugCheck } from "@/composables/useSlugCheck"
-
+useMeta({
+  title: `Create New Project`,
+  description: "Create Projects",
+  indexable: false, // Prevent search engines from indexing admin
+})
 import { debounce } from "lodash-es"
 const QuillEditor = defineAsyncComponent(() =>
   import("@vueup/vue-quill").then((m) => m.QuillEditor)

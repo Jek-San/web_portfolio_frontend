@@ -51,9 +51,10 @@
       </div>
     </div>
   </section>
+
   <section class="min-h-screen bg-[#0d1117] text-white p-6">
     <h1 class="text-3xl font-bold mb-8 text-cyan-400">
-      📈 Project View Analytics
+      📊 Project View Analytics Chart
     </h1>
 
     <div v-if="loading" class="text-center text-gray-400">Loading chart...</div>
@@ -70,9 +71,18 @@
 import { ref, onMounted } from "vue"
 import { useApi } from "@/composables/useApi"
 import BarChart from "@/components/BarChart.vue"
-const { data, pending } = await useFetch(
-  "http://localhost:3001/api/views/analytics"
-)
+
+useMeta({
+  title: "Analytics",
+  description: "Project view tracking and insights.",
+  indexable: false, // Prevent search engines from indexing admin
+})
+// Default reactive state for fetched analytics data
+const data = ref({
+  viewsByProject: [],
+  recentViews: [],
+})
+
 const chartData = ref({
   labels: [],
   datasets: [
@@ -103,10 +113,16 @@ const chartOptions = {
 
 const loading = ref(true)
 const error = ref(false)
+const pending = ref(true)
 
 onMounted(async () => {
   try {
     const res = await useApi("api/views/analytics")
+
+    // Save full response to local state
+    data.value = res
+
+    // Chart mapping
     chartData.value.labels = res.viewsByProject.map((v) => v.projectSlug)
     chartData.value.datasets[0].data = res.viewsByProject.map((v) => v._count)
   } catch (err) {
@@ -114,6 +130,7 @@ onMounted(async () => {
     error.value = true
   } finally {
     loading.value = false
+    pending.value = false
   }
 })
 </script>

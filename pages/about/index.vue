@@ -45,4 +45,11 @@
 
 <script setup>
 // No logic needed for static content
+
+import { useMeta } from "@/utils/meta"
+
+useMeta({
+  title: "About Me",
+  description: "Learn more about my background, journey, and skills.",
+})
 </script>

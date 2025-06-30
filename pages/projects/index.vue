@@ -71,7 +71,10 @@ import { useFlash } from "@/composables/useFlash"
 const { setFlash } = useFlash()
 const projects = ref([])
 const isLoading = ref(false)
-
+useMeta({
+  title: "Projects Gallery",
+  description: "Projects I've built with code",
+})
 const fetchProjects = async () => {
   isLoading.value = true
   try {
