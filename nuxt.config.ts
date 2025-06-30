@@ -11,7 +11,11 @@
 // })
 
 export default defineNuxtConfig({
-  ssr: false,
+  ssr: true,
+  nitro: {
+    preset: "static",
+  },
+
   runtimeConfig: {
     public: {
       API_BASE_URL: process.env.NUXT_PUBLIC_API_BASE_URL,
