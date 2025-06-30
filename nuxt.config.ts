@@ -15,6 +15,10 @@ export default defineNuxtConfig({
   nitro: {
     preset: "static",
   },
+  image: {
+    provider: "ipx", // fallback to default IPX
+    domains: ["webportfoliobackend-production.up.railway.app"],
+  },
 
   runtimeConfig: {
     public: {

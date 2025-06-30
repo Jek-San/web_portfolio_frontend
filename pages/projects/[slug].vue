@@ -96,7 +96,7 @@
               class="relative rounded-xl overflow-hidden cursor-pointer"
               @click="openModal(i)"
             >
-              <NuxtImg
+              <img
                 :src="useAssetUrl(img)"
                 alt="Gallery Image"
                 class="rounded-xl shadow-lg object-cover h-64 w-full border border-gray-700/30 transition duration-300 hover:scale-[1.02]"
@@ -139,7 +139,7 @@
                   :key="'modal-' + i"
                   class="flex justify-center"
                 >
-                  <NuxtImg
+                  <img
                     :src="useAssetUrl(img)"
                     class="max-h-[80vh] object-contain rounded-xl shadow-xl"
                     format="webp"

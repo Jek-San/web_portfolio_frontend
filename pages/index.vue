@@ -6,9 +6,10 @@
     <NuxtImg
       src="/assets/hero-dark.png"
       alt="Hero Image"
-      class="w-full max-w-4xl mb-8 rounded-xl shadow-xl"
+      class="w-full h-[70vh] max-w-4xl mb-8 rounded-xl shadow-xl"
       format="webp"
       loading="lazy"
+      quality="80"
     />
     <h1 class="text-4xl sm:text-5xl font-extrabold text-cyan-400">
       Welcome to My Portfolio

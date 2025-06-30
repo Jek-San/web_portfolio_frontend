@@ -25,7 +25,7 @@ useHead({
     { name: "viewport", content: "width=device-width, initial-scale=1" },
     { name: "theme-color", content: "#0d1117" },
   ],
-  link: [{ rel: "icon", href: "/fvg.svg", type: "image/png/x-icon/svg" }],
+  link: [{ rel: "icon", href: "/fvg.ico", type: "image/png/x-icon/svg" }],
 })
 </script>
 
